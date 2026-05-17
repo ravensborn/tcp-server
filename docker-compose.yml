@@ -1,0 +1,13 @@
+services:
+  teltonika-test:
+    image: python:3.12-slim
+    container_name: teltonika-test-server
+    restart: unless-stopped
+    working_dir: /app
+    environment:
+      - PORT=5027
+    volumes:
+      - ./server.py:/app/server.py:ro
+    command: python -u server.py
+    ports:
+      - "5027:5027"
