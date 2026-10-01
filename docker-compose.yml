@@ -11,7 +11,7 @@ services:
       - LOG_DIR=/app/data
       # Optional TEK 811 extras:
       # - TANK_HEIGHT_CM=300      # compute fill level from ullage
-      # - TEK_REPLY=R3=ACTIVE     # command sent back after first message
+      - TEK_REPLY=R3=ACTIVE       # activate the unit after its first message
       # - TEK_PASSWORD=TEK811
       # - TEK_REPLY_CRC=0
     volumes:
