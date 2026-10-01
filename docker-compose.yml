@@ -8,7 +8,7 @@ services:
       - PORT=5027
       # auto = detect Teltonika vs Tekelek TEK 811 per connection
       - PROTOCOL=auto
-      - LOG_DIR=/app/data
+      - LOG_DIR=            # empty = log to stdout only, no files
       # Optional TEK 811 extras:
       # - TANK_HEIGHT_CM=300      # compute fill level from ullage
       - TEK_REPLY=R3=ACTIVE       # activate the unit after its first message
@@ -16,7 +16,6 @@ services:
       # - TEK_REPLY_CRC=0
     volumes:
       - ./server.py:/app/server.py:ro
-      - ./data:/app/data
     command: python -u server.py
     ports:
       - "5027:5027"

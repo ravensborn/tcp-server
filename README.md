@@ -22,7 +22,7 @@ Point the sensor at the server's IP and port (TEK 811: parameters `S15` / `S16`)
 ## TEK 811 – what gets logged
 
 Every message is printed to stdout and appended to files under `LOG_DIR`
-(default `./data`, `/app/data` in Docker):
+(default `./data`; the compose file sets `LOG_DIR=` so the container logs to stdout only):
 
 | File | Content |
 |------|---------|
